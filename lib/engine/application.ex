@@ -7,9 +7,7 @@ defmodule Engine.Application do
     opts = [strategy: :one_for_one, name: Engine.Supervisor]
     HTTPoison.start()
 
-    children =
-      [
-      ] ++ children(target())
+    children = [] ++ children(target())
 
     Supervisor.start_link(children, opts)
   end
